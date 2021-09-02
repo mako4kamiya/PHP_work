@@ -16,9 +16,9 @@
             <h2>XMLの情報を読み込む - simplexml_load_file</h2>
             <pre><?php
                     $xmlTree = simplexml_load_file('https://h2o-space.com/feed');
-                    foreach ($xmlTree -> channel -> itme as $item):
                 ?>
-                ・<a href="<?php print($item -> link) ?>"><?php print($item -> title); ?></a>
+                <?php foreach($xmlTree -> channel -> item as $item) : ?>
+                    ・<a href="<?php print($item->link); ?>"><?php print($item->title); ?></a>
                 <?php endforeach ?>
             </pre>
         </main>
